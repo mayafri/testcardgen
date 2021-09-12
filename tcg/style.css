@@ -1,0 +1,83 @@
+/* GLOBAL */
+
+body {
+    display: flex;
+    justify-content: space-between;
+    background: #3f3f3f;
+    color: #cacaca;
+    margin: 2em;
+    font-family: helvetica;
+}
+
+@font-face {
+    font-family: "VCR";
+    src: url("vcr.ttf");
+}
+
+strong {
+    color: white;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+/* CONTROLS */
+
+#controls {
+    padding: 0 1em;
+    max-width: 30em;
+}
+
+#controls .btn {
+    display: inline-block;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+    width: 4em;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    background-color: #969696;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: outset 3pt #b3b2b2;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+#controls .btn:active,
+#controls .btn.selected {
+    border-style: inset;
+}
+
+#controls textarea {
+    font-size: 14pt;
+}
+
+#ratio-btns {
+    text-align: right;
+}
+
+/* PREVIEW */
+
+#testcard {
+    width: 640px;
+    height: 480px;
+}
+
+#testcard.wide {
+    width: 853px;
+}
+
+/* FULLSCREEN */
+
+#testcard.fullscreen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}

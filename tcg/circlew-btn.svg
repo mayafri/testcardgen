@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="640" height="480">
+    <circle cx="320" cy="240" r="150" stroke="white" stroke-width="20" fill="transparent" />
+    <text x="220" y="320" fill="white" font-size="200" font-family="helvetica">W</text>
+</svg>

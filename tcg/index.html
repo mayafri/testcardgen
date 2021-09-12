@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Testcard Generator</title>
+		<link rel="stylesheet" href="style.css">
+		<script defer src="script.js"></script>
+	</head>
+	<body>
+
+        <div id="controls">
+            <h1>TV Testcard Generator</h1>
+            <p>
+                This tool can be used to generate test patterns for a video output
+                or tools like OBS.
+            </p>
+            <p>
+                <strong>Click on the preview monitor</strong> or on the button below to show the
+                testcard in fullscreen. Click again to return to this page.
+            </p>
+            <p><strong>Copy the fullscreen link</strong> and add a Browser source in OBS
+            to display your customized testcard.</p>
+            <p>
+                <button onclick="toggleFullscreen()">Show in fullscreen</button>
+                <button onclick="copyFullscreenLink()">Copy fullscreen link</button>
+            </p>
+            <h2>Pattern</h2>
+            <p>
+                <span
+                    class="btn"
+                    onclick="setPattern('black')"
+                    style="background:black"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('gray50')"
+                    style="background:#808080"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('darkblue')"
+                    style="background:#0023c0"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('mauve')"
+                    style="background-image: url('mauve.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('bars75')"
+                    style="background-image: url('bars75.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('bars100')"
+                    style="background-image: url('bars100.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('smpte')"
+                    style="background-image: url('smpte.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('lines')"
+                    style="background-image: url('lines.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('linesw')"
+                    style="background-image: url('linesw.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    onclick="setPattern('checkerboard')"
+                    style="background-image: url('checkerboard.svg')"
+                >
+                </span>
+            </p>
+
+            <h2>Geometry</h2>
+            <p>
+                <span
+                    class="btn"
+                    id="btn-circle"
+                    onclick="toggleOption('circle')"
+                    style="background-image: url('circle-btn.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    id="btn-circlew"
+                    onclick="toggleOption('circlew')"
+                    style="background-image: url('circlew-btn.svg')"
+                >
+                </span>
+                <span
+                    class="btn"
+                    id="btn-overscan"
+                    onclick="toggleOption('overscan')"
+                    style="background-image: url('overscan-btn.svg')"
+                >
+                </span>
+            </p>
+
+            <h2>Label</h2>
+            <p>
+                <textarea
+                    id="label-widget"
+                    oninput="setLabel(this.value)"
+                    rows=5
+                    cols=30
+                ></textarea>
+            </p>
+
+            <p>
+                <span
+                    class="btn"
+                    id="btn-text"
+                    onclick="toggleOption('text')"
+                >
+                TEXT
+                </span>
+                <span
+                    class="btn"
+                    id="btn-time"
+                    onclick="toggleOption('time')"
+                >
+                TIME
+                </span>
+                <span
+                    class="btn"
+                    id="btn-inverted"
+                    onclick="toggleOption('inverted')"
+                >
+                INVERT
+                </span>
+                <span
+                    class="btn"
+                    id="btn-boxed"
+                    onclick="toggleOption('boxed')"
+                >
+                BOX
+                </span>
+                <span
+                    class="btn"
+                    id="btn-blink"
+                    onclick="toggleOption('blink')"
+                >
+                BLINK
+                </span>
+            </p>
+        </div>
+
+        <div id="preview">
+            <p id="ratio-btns">
+                <label>
+                    Preview in
+                    <button onclick="setPreviewWide(false)">4:3</button>
+                    <button onclick="setPreviewWide(true)">16:9</button>
+                </label>
+            </p>
+            <canvas id="testcard" onclick="toggleFullscreen()" width=1920 height=1080>
+            </canvas>
+            </div>
+        </div>
+	</body>
+</html>
